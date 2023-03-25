@@ -1,0 +1,18 @@
+import requests
+import os
+import sys
+
+bearer_token = "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkhNcHdjdFl4YWlRdWg4Y0M0ejN0UCJ9.eyJpc3MiOiJodHRwczovL2F1dGgucmVwaHJhc2UuYWkvIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDcxMDA3Mzc1Njk4MjA5NjczNjMiLCJhdWQiOlsiaHR0cHM6Ly9kaXkucmVwaHJhc2UuYWkvYXV0aDAiLCJodHRwczovL3JlcGhyYXNlYWktcHJvZC51cy5hdXRoMC5jb20vdXNlcmluZm8iXSwiaWF0IjoxNjc5NzY1NjY0LCJleHAiOjE2Nzk4NTIwNjQsImF6cCI6IjNLVTVqdkVxV0pCQ1VLblBYMjZvbmFTUHkzakozMEo0Iiwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSByZWFkOnJlcGhyYXNlLmFpIGFsbDpkaXkgcmVhZDpyZXBocmFzZS5haSJ9.UKczfo7s0eAzzjS27nSAexmdbWikoYllnXXlW814Ow3HZS6tv3rw9IkjZUggGrPpuuWwXELk6fpqswwekosNtGjeN4aXPsSUQ_sD6G4D9iFGXHqdcm3XNs9QNRc5Clew2TgjhCWjST6bgbM0s9HDJballKAcJKLqZJOqXeu1c9t6RuOxsatQFotfG4oXepDlYWc9_azpFgz_UTpaz_iIjwf9ua9IfqnBVNuVvplUOh-yFekQYQuBbogZiSauTGR1-LKiJf49n77sqhkIZxgGVR6VgvxfIdeqcD5DqsVIAmTmGFn8TQ-HKeL4y0Rk-Z_HH1LoGchdlk4ypBXI3javYg"
+
+campaign_id = "GcCf1NQc2SNlIZWIOrmWxaWfYPPXYV"
+
+url = f"https://personalized-brand.api.rephrase.ai/v2/campaign/{campaign_id}"
+
+headers = {
+    "accept": "application/json",
+    "Authorization": bearer_token
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.text)
